@@ -1,1 +1,65 @@
+-- หน้าแรก--
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แบ่งใจใส่จาน</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Prompt", sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #e6ffe6); /* ไล่สีเขียวอ่อน */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 120px;
+      color: #5a3825; /* สีน้ำตาล */
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 28px;
+      color: #3d2b1f;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3d2b1f;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1a8d3c;
+    }
+
+    .corner-text {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+
+  <!-- ใช้ฟอนต์ไอคอนจาก Google Material -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+ 
+  <div class="container">
+    <!-- ไอคอนจานกับส้อม ใช้ emoji แทน หรือจะเปลี่ยนเป็นรูปภาพก็ได้ -->
+    <div class="logo">
+      <img src="" alt="โลโก้" width="50" height="50">
+    </div>
+    
+</body>
+</html>
 เอาไว้ใส่ไฟล์หน้าเว็ปเปล่าๆยังไม่ได้เชื่อม
