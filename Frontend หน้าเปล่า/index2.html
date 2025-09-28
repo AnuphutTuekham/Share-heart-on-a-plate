@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ฟอร์มกรอกข้อมูล</title>
+  <style>
+
+     header .icon {
+  width: 100px;
+  height: auto;
+}
+
+
+    body {
+      font-family: "Prompt", sans-serif;
+      background: #f7fcf9;
+      padding: 30px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      color: #2c3e50;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      background: #fafafa;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #27ae60;
+      background: #fff;
+      box-shadow: 0 0 6px rgba(39, 174, 96, 0.3);
+    }
+
+    textarea {
+      resize: none;
+      min-height: 5px; /* ให้ textarea มีขนาดคงที่สวยๆ */
+    }
+
+    .submit-btn {
+      background: #27ae60;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #219150;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="c:\Users\ACER NitroV15\Downloads\Image (9).png" alt="ช้อนส้อม" class="icon" style="justify-content: center;">
+    
+    <h1>แบ่งใจใส่จาน </h1>
+
+    
+  </header>
+  <div class="form-container">
+    <div class="form-group">
+      <label>ชื่อโครงการ</label>
+      <input type="text" placeholder="ชื่อโครงการ">
+    </div>
+
+    <div class="form-group">
+      <label>รายละเอียดของโครงการ</label>
+      <textarea placeholder="รายละเอียด"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>จุดรับบริจาค</label>
+      <input type="text" placeholder="จังหวัด/อำเภอ/ตำบล/รหัสไปรษณีย์/รายละเอียด">
+    </div>
+
+    <div class="form-group">
+      <label>เป้าหมายโครงการ</label>
+      <input type="text" placeholder="เป้าหมาย">
+    </div>
+
+    <div class="form-group">
+      <label>ติดต่อ</label>
+      <input type="text" placeholder="ติดต่อ">
+    </div>
+
+    <button class="submit-btn">ส่งข้อมูล</button>
+  </div>
+</body>
+</html>
