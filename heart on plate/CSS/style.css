@@ -1,0 +1,66 @@
+/* หน้าเพจหลัก: ฟอนต์และสีพื้นหลังเริ่มต้น */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+
+/* เนื้อหาหลัก: กำหนดระยะขอบภายในและความกว้างสูงสุด */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* การ์ดโปรเจกต์: พื้นหลังสีขาว มุมมน และเงาเล็กน้อย */
+.project-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* ส่วนหัวของโปรเจกต์: จัดไอเท็มเป็นแถวและมีช่องว่างระหว่างกัน */
+.project-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* รูปแบนเนอร์ในการ์ด: ขนาดคงที่และครอบคลุมพื้นที่ด้วย object-fit */
+.banner-image {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ชื่อโปรเจกต์: ปรับขนาดและระยะห่างด้านบน */
+.project-info h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+/* คำอธิบายโปรเจกต์: ระยะห่างระหว่างบรรทัดและสีจาง */
+.project-info p {
+    margin: 5px 0;
+    color: #666;
+}
+/* แถบสรุปใต้ Header */
+.global-today-stats{
+  max-width: 1100px;
+  margin: 12px auto 8px;
+  padding: 10px 14px;
+  border: 1px solid #e0f0e6;
+  background: #f6fff6;
+  border-radius: 12px;
+  display: flex; gap: 16px; justify-content: center; align-items: center;
+  color: #2f5d31; font-size: 14px;
+}
+.global-today-stats .item{ display:flex; gap:8px; align-items:baseline; }
+.global-today-stats .label{ font-weight:600; color:#2b3a2f; }
+.global-today-stats .value{ font-weight:800; color:#256a2b; }

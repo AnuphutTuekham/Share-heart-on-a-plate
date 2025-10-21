@@ -1,0 +1,123 @@
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&display=swap');
+
+    body {  
+      min-height: 100vh;
+      background: linear-gradient(to top, #d4f8d4, #ffffff);
+      margin: 0;
+      font-family: 'Noto Sans Thai', sans-serif;
+    }
+
+    /* header */
+    header {
+      display: flex;
+      align-items: center;   /* ทำให้รูปกับข้อความอยู่กึ่งกลางแนวตั้ง */
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 0;
+    }
+
+    header h1 {
+      font-size: 3rem;   /* ขยายข้อความเล็กน้อยให้บาลานซ์กับโลโก้ */
+      font-weight: 500;
+      color: #4b2c17;
+      margin: 0;
+      line-height: 1;
+    }
+
+    header .icon {
+  width: 100px;
+  height: auto;
+}
+
+
+
+    /* container ของการ์ด */
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .card {
+      width: 220px;
+      height: 320px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* สีพื้นหลังของการ์ด */
+    .donor {
+      background: linear-gradient(to bottom, #ffe1c6, #ffffff);
+    }
+    .project {
+      background: linear-gradient(to bottom, #c8f5d1, #ffffff);
+    }
+    .admin {
+      background: linear-gradient(to bottom, #dcdcdc, #ffffff);
+    }
+
+    /* ไอคอนในการ์ด */
+    .card .icon {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.2em;
+      margin: 5px 0 10px;
+      color: #855d4b;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 8px 25px;
+      border-radius: 20px;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: white;
+    }
+
+    .donor .btn {
+      background: #ff8a47;
+    }
+    .donor .btn:hover {
+      background: #e46c26;
+    }
+
+    .project .btn {
+      background: #2c8b5e;
+    }
+    .project .btn:hover {
+      background: #216846;
+    }
+
+    .admin .btn {
+      background: #555555;
+    }
+    .admin .btn:hover {
+      background: #333333;
+    }

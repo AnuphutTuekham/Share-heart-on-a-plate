@@ -1,0 +1,32 @@
+<div class="header-inner">
+  <div class="logo">
+    <a href="index.php" class="logo-link">
+      <img src="pic/logoNOBG.png" alt="โลโก้ แบ่งใจใส่จาน" class="logo-icon">
+      <h1>แบ่งใจใส่จาน</h1>
+    </a>
+  </div>
+
+  <div class="search-bar" role="search" aria-label="ค้นหา">
+    <i class="fas fa-search" aria-hidden="true"></i>
+    <input type="search" placeholder="ค้นหาโครงการ">
+    <button class="search-btn" type="button" aria-label="ค้นหา">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <div class="user-profile" id="userProfile" aria-haspopup="true" aria-expanded="false">
+    <img src="pic/logoNOBG.png" alt="User Profile" class="profile-img">
+    <div class="dropdown-menu" id="headerDropdown">
+      <!-- จะแสดง/ซ่อนด้วย js/header.js ตาม role_id -->
+      <a href="profile.html" class="menu-item" data-item="profile">
+        <i class="fas fa-user-edit"></i><span>เปลี่ยนโปรไฟล์</span>
+      </a>
+      <a href="owner.php" class="menu-item" data-item="my-projects">
+        <i class="fas fa-folder-open"></i><span>โครงการของฉัน</span>
+      </a>
+      <a href="project-list.php" class="menu-item" data-item="review-projects">
+        <i class="fas fa-clipboard-check"></i><span>ตรวจสอบโครงการ</span>
+      </a>
+    </div>
+  </div>
+</div>

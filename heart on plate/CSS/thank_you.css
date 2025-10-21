@@ -1,0 +1,90 @@
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --grad-from:#ffffff;
+  --grad-to:#dff6e4;
+  --shadow:0 4px 12px rgba(0,0,0,.08);
+  --accent:#2e7d32;
+  --accent-2:#3b7a52;
+  --text:#2c3e50;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+.ty-wrap{
+  min-height:calc(100vh - 72px); /* เว้นที่ให้ header */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  padding:24px 16px 48px;
+}
+
+.ty-card{
+  width:min(720px, 92vw);
+  background:linear-gradient(160deg, var(--grad-from), var(--grad-to));
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:36px 24px 44px;
+  text-align:center;
+  border:1px solid #e6efe8;
+}
+
+.ty-icon{
+  display:flex;justify-content:center;margin-bottom:10px;
+}
+.ty-icon svg{ width:120px; height:120px; }
+.ty-icon .ring{
+  fill:#fff;
+  stroke:#c7e5d0;
+  stroke-width:2.5;
+}
+.ty-icon .check{
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.ty-title{
+  margin:10px 0 10px;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:.02em;
+  color:#3d2b1f;
+}
+.ty-subtitle{
+  display:inline-block;
+  background:#fff;
+  color:#3d2b1f;
+  padding:10px 18px;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+  font-size:18px;
+  font-weight:700;
+}
+
+.ty-actions{
+  display:flex; gap:12px; align-items:center; justify-content:center;
+}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 16px; border-radius:10px; font-weight:700;
+  text-decoration:none; border:0; cursor:pointer; transition:.15s;
+}
+.btn .ico{ width:20px; height:20px; }
+.btn-primary{ background:var(--accent-2); color:#fff; }
+.btn-primary:hover{ filter:brightness(.96); }
+.btn-outline{
+  background:#fff; color:#1f2937; border:2px solid #e5e7eb;
+}
+.btn-outline:hover{ background:#f8fafc; }
+
+@media (max-width:480px){
+  .ty-card{ padding:28px 18px 34px; }
+  .ty-title{ font-size:24px; }
+  .ty-subtitle{ font-size:16px; }
+}

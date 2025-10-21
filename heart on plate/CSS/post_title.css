@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.detail-card {
+    display: grid;
+    grid-template-columns: 420px 1fr; /* รูปคอลัมน์ซ้ายคงที่ ข้อความยืดขวา */
+    gap: 20px;
+    align-items: start;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+/* วางรูปให้อยู่คอลัมน์ที่ 1 (ซ้าย) */
+.image-section {
+    grid-column: 1;
+    align-self: start;
+}
+.image-section .detail-image {
+    width: 100%;
+    height: auto;
+    max-width: 420px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* วางข้อความให้อยู่คอลัมน์ที่ 2 (ขวา) */
+.info-section {
+    grid-column: 2;
+    text-align: left;
+    padding-top: 6px;
+}
+
+/* ให้ปุ่มลงด้านล่างใต้รูป (เฉพาะคอลัมน์ซ้าย) */
+.button-section {
+    grid-column: 1; /* อยู่ใต้รูปฝั่งซ้าย */
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start; /* ชิดซ้ายตามภาพ */
+    margin-top: 12px;
+}
+
+/* ปุ่ม: สไตล์ครีม พิลล์ แบบในภาพ */
+.action-button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #FFEAA7;
+    background:  #f3d98a;
+    color: #5a3b00;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+    cursor: pointer;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* ฮีโร่สีเดียวทั้งสองปุ่ม */
+.donate-button,
+.chat-button {
+    background:  #FFEAA7;
+    color: #5a3b00;
+    border-color: gray;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* Responsive: เมื่อจอเล็ก ให้รูปบนข้อความล่างและปุ่มอยู่ใต้รูปกึ่งกลาง */
+@media (max-width: 768px) {
+    .detail-card {
+        grid-template-columns: 1fr;
+    }
+    .image-section { grid-column: 1; }
+    .info-section  { grid-column: 1; }
+    .button-section {
+        grid-column: 1;
+        justify-content: center;
+        margin-top: 12px;
+    }
+    .search-bar { width: 200px; }
+    .logo h1 { font-size: 28px; text-decoration: none; }
+}
+
+.foundation-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.foundation-details p {
+    margin: 8px 0;
+}
+
+.error {
+    color: #dc3545;
+    padding: 10px;
+    background: #f8d7da;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}

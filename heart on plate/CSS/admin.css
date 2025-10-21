@@ -1,0 +1,111 @@
+:root{
+  --accent:#3b7a52;
+  --muted:#eaf6ec;
+  --card:#ffffff;
+  --soft:#f3faf3;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#fff;
+}
+
+/* main layout */
+.admin-main{
+  display:flex;
+  gap:24px;
+  max-width:1200px;
+  margin:20px auto;
+  padding:16px;
+}
+
+/* sidebar */
+.admin-sidebar{
+  width:220px;
+  background:linear-gradient(180deg,#f3fbf5,#eef8ee);
+  border-radius:12px;
+  padding:18px;
+  height: calc(100vh - 80px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position:sticky;
+  top:12px;
+}
+.sidebar-title{
+  margin:0 0 16px 0;
+  font-size:20px;
+  font-weight:700;
+  color:var(--accent);
+}
+.sidebar-nav{ display:flex; flex-direction:column; gap:12px; }
+.nav-item{
+  color:#0b1b12;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:600;
+}
+.nav-item.active{
+  background:var(--muted);
+  color:var(--accent);
+}
+
+/* content */
+.admin-content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* top stat cards */
+.cards-row {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-num {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+}
+
+/* action buttons */
+.action-buttons{ display:flex; gap:8px; align-items:center; }
+.btn{ padding:6px 12px; border:0; border-radius:8px; font-weight:600; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+.btn[disabled]{ opacity:.5; cursor:not-allowed; }
+.btn-edit{ background:#1976d2; color:#fff; }
+.btn-edit:hover{ filter:brightness(.95); }
+
+/* responsive */
+@media (max-width:900px){
+  .admin-main{ flex-direction:column; padding:12px; }
+  .admin-sidebar{ width:100%; height:auto; position:relative; }
+}
+
+@media (max-width: 768px) {
+    .cards-row {
+        overflow-x: auto;
+        padding: 20px 0;
+        gap: 12px;
+    }
+    
+    .stat-card {
+        min-width: 200px;
+    }
+}

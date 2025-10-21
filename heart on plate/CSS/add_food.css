@@ -1,0 +1,130 @@
+:root{
+    --accent:#3b7a52;
+    --muted:#cfe7d6;
+    --cream:#FFEAA7;
+    --input-border:#d6e3d3;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#fff;
+    margin:0;
+    padding:0 12px 40px;
+}
+
+/* หัวหน้าเพจ */
+.add-main{
+    max-width:900px;
+    margin:28px auto;
+    padding:0 16px;
+}
+.page-title{
+    text-align:center;
+    font-size:32px;
+    margin:8px 0 24px;
+    font-weight:800;
+    color:#111;
+}
+
+/* ฟอร์มจัดเป็นสองคอลัมน์แบบแนวตั้งคู่กับเลเบลซ้าย */
+.food-form{
+    display: grid;
+    grid-template-columns: 1fr; /* คอลัมน์เดียว */
+    gap: 12px 0;                /* ระยะห่างแนวตั้งระหว่างแถว */
+    align-items: start;
+    background: transparent;
+}
+
+/* ให้แต่ละเลเบลเรียงเป็นคอลัมน์ (ข้อความเลเบลบน อินพุตล่าง) */
+.food-form > label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* เลเบลข้อความซ้าย */
+.label-text{
+    color:var(--accent);
+    display:block;
+    font-weight:600;
+    padding-left:4px;
+}
+
+/* อินพุต */
+.food-form input[type="text"],
+.food-form input[type="number"],
+.food-form input[type="date"],
+.food-form input[type="search"],
+.food-form input[type="file"]{
+    width:100%;
+    padding:10px 12px;
+    border-radius:8px;
+    border:2px solid var(--input-border);
+    background:transparent;
+    box-sizing:border-box;
+    font-size:14px;
+    color:#222;
+}
+
+/* file input ปรับให้ดูเหมือนกล่อง */
+.file-label input[type="file"]{ padding:6px 8px; }
+
+/* select for category */
+.food-form select {
+    width:100%;
+    padding:10px 12px;
+    border-radius:8px;
+    border:2px solid var(--input-border);
+    background:transparent;
+    font-size:14px;
+    color:#222;
+    box-sizing:border-box;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}
+
+/* ปุ่มและการจัดวางแอคชัน */
+.form-actions{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+/* ปุ่มกลับแบบชิดซ้าย */
+.back-button{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:14px;
+    background:#fff;
+    border:2px solid #eee;
+    color:#222;
+    text-decoration:none;
+}
+
+/* ปุ่มส่งข้อมูลกึ่งกลางขวา */
+.submit-button{
+    padding:10px 22px;
+    border-radius:8px;
+    border:none;
+    background:var(--muted);
+    color:var(--accent);
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* กำหนด responsive ให้ดูดีบนมือถือ */
+@media (max-width:760px){
+    .food-form{ grid-template-columns:1fr; }
+    .form-actions{ justify-content:center; gap:16px; }
+    .back-button{ order:1; }
+    .submit-button{ order:2; }
+    .food-form select { font-size:15px; }
+}

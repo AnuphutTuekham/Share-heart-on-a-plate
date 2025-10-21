@@ -1,0 +1,153 @@
+:root {
+  --chat-accent: #3b7a52;
+  --chat-light: #f7fbf7;
+  --chat-bg: #ffffff;
+  --chat-text: #111;
+}
+
+/* หน้าแชท: กึ่งกลางคอนเทนเนอร์ */
+.chat-page {
+  max-width: 1000px;
+  margin: 28px auto;
+  padding: 0 16px 40px;
+}
+
+/* panel ในหน้า (ใหญ่กว่า widget) */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(80vh);
+  max-height: 900px;
+  background: var(--chat-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* header ของ panel */
+.chat-header {
+  background: linear-gradient(90deg, #dff5e6, #c8e6c9);
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--chat-text);
+}
+
+/* พื้นที่ข้อความ */
+.chat-messages {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  background: var(--chat-light);
+  flex: 1 1 auto;
+}
+
+/* ฟองข้อความ */
+.msg {
+  max-width: 78%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: linear-gradient(180deg,#d6f0df,#bfe6c9);
+  color: var(--chat-text);
+  border-bottom-right-radius: 6px;
+}
+
+.msg.bot {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid #e6efe6;
+  color: var(--chat-text);
+  border-bottom-left-radius: 6px;
+}
+
+/* input area */
+.chat-input {
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.chat-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d6e3d3;
+  outline: none;
+  font-size: 15px;
+}
+.chat-input button {
+  background: var(--chat-accent);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* on small screens */
+@media (max-width:760px){
+  .chat-panel { height: 70vh; }
+  .chat-input input { font-size:14px; }
+}
+
+/* Chat modal wrapper (hidden by default) */
+.chat-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* เมื่อ active ให้แสดง */
+.chat-modal.active {
+  display: flex;
+}
+
+/* ปรับ overlay */
+.chat-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(2px);
+}
+
+/* ปรับตำแหน่ง chat-panel ภายใน modal */
+.chat-panel {
+  position: relative;
+  z-index: 2;
+  width: 680px;
+  max-width: calc(100vw - 40px);
+  height: 70vh;
+  display: none; /* แสดงเมื่อเปิด (JS จะเซ็ตเป็น flex) */
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ปุ่มปิด */
+.chat-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* ปรับขนาดและช่องว่างภายในเมื่อเป็น modal */
+@media (max-width: 760px) {
+  .chat-panel { width: 95vw; height: 75vh; }
+}
