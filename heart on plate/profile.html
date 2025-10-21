@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แบ่งใจใส่จาน</title>
+  <link rel="stylesheet" href="CSS/profile.css">
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+    <img src="pic/logoNOBG.png" alt="ช้อนส้อม" class="icon">
+    <h1>แบ่งใจใส่จาน</h1>
+  </header>
+
+  <div class="container">
+    <!-- การ์ดผู้บริจาค -->
+    <div class="card donor" data-role="1">
+      <img src="pic/user.png" alt="โลโก้ แบ่งใจใส่จาน" class="icon">
+      <p>ผู้บริจาค</p>
+      <button class="btn select-role">เลือก</button>
+    </div>
+
+    <!-- การ์ดโครงการ -->
+    <div class="card project" data-role="2">
+      <img src="pic/owner.png" alt="โลโก้ แบ่งใจใส่จาน" class="icon">
+      <p>จัดทำและบริหารโครงการแจกจ่ายอาหาร</p>
+      <button class="btn select-role">เลือก</button>
+    </div>
+
+    <!-- การ์ดแอดมิน -->
+    <div class="card admin" data-role="3">
+      <img src="pic/admin.png" alt="โลโก้ แบ่งใจใส่จาน" class="icon">
+      <p>ผู้ดูแลระบบ (Admin)</p>
+      <button class="btn select-role">เลือก</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.card[data-role] .select-role').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.currentTarget.closest('.card[data-role]');
+          const roleId = card.dataset.role;
+          setRole(roleId);
+        });
+      });
+
+      async function setRole(roleId) {
+        try {
+          const res = await fetch('set_role.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'role_id=' + encodeURIComponent(roleId)
+          });
+          const data = await res.json();
+          if (!res.ok || !data.ok) throw new Error(data.message || 'Error');
+
+          // redirect ตามบทบาท
+          if (roleId === '3') location.href = 'index.php';
+          else if (roleId === '2') location.href = 'index.php';
+          else location.href = 'index.php';
+        } catch (err) {
+          alert('ตั้งค่าบทบาทไม่สำเร็จ: ' + err.message);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

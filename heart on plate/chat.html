@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>แชท — แบ่งใจใส่จาน</title>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="pic/logoNOBG.png" alt="โลโก้ แบ่งใจใส่จาน" class="logo-icon">
+                    <h1>แบ่งใจใส่จาน</h1>
+                </a>
+            </div>
+
+            <div class="search-bar" role="search" aria-label="ค้นหา">
+                <input type="search" placeholder="ค้นหาโครงการ" aria-label="คำค้นหา">
+                <button class="search-btn" type="button" aria-label="ค้นหา"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="user-profile">
+                <img src="pic/logoNOBG.png" alt="User Profile">
+            </div>
+        </div>
+    </header>
+
+    <main class="chat-page">
+        <section class="chat-panel" role="region" aria-label="แชทสนับสนุน">
+            <div class="chat-header">
+                <div>แชทกับเรา</div>
+                <a href="index.html" class="close-link" aria-label="ปิด"><i class="fas fa-times"></i></a>
+            </div>
+
+            <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
+
+            <form class="chat-input" id="chatForm" action="javascript:void(0);" aria-label="ส่งข้อความ">
+                <input id="chatInput" type="text" placeholder="พิมพ์ข้อความ..." aria-label="พิมพ์ข้อความ">
+                <button id="chatSend" type="button" aria-label="ส่ง"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>

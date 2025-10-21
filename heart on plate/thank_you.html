@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You — แบ่งใจใส่จาน</title>
+  <link rel="stylesheet" href="CSS/header.css" />
+  <link rel="stylesheet" href="CSS/thank_you.css" />
+</head>
+<body>
+  <!-- ใช้ Header ส่วนกลาง -->
+  <header class="header"></header>
+
+  <main class="ty-wrap">
+    <section class="ty-card" aria-labelledby="thankyouTitle">
+      <div class="ty-icon">
+        <!-- ไอคอนเช็คแบบ SVG ไม่พึ่ง CDN -->
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="50" class="ring"></circle>
+          <path class="check" d="M38 62 l14 14 30-32"></path>
+        </svg>
+      </div>
+
+      <h2 id="thankyouTitle" class="ty-title">THANK YOU</h2>
+      <div class="ty-subtitle">การบริการเสร็จสิ้น</div>
+    </section>
+
+    <div class="ty-actions">
+      <a class="btn btn-outline" href="index.php" aria-label="กลับหน้าหลัก">
+        <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M14 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        กลับหน้าหลัก
+      </a>
+
+      <a class="btn btn-primary" href="index.php" aria-label="บริจาคเพิ่มเติม" id="btnDonateMore">
+        บริจาคเพิ่มเติม
+      </a>
+    </div>
+  </main>
+
+  <script src="js/header.js"></script>
+  <script>
+    (function(){
+      const btn = document.getElementById('btnDonateMore');
+      if (!btn) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        if (document.referrer && history.length > 1) {
+          history.back();
+        } else {
+          location.href = 'index.php';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
