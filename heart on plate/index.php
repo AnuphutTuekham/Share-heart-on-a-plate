@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'sql/config.php';
 
 // ดึง role_id จาก session ถ้ายังไม่มีให้ลองอ่านจากตาราง users ด้วย user_id ใน session

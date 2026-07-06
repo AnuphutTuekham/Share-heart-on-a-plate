@@ -2,7 +2,6 @@
 // filepath: c:\D_drive\heart_on_plate\close_project.php
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/sql/config.php';
-session_start();
 
 $roleId = isset($_SESSION['roleID']) ? (int)$_SESSION['roleID'] : ((isset($_SESSION['role_id']) ? (int)$_SESSION['role_id'] : 0));
 

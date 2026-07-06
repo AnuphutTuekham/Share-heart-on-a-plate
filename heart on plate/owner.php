@@ -1,6 +1,4 @@
 <?php
-// filepath: c:\D_drive\heart_on_plate\owner.php
-session_start();
 require_once __DIR__ . '/sql/config.php';
 
 $roleId = isset($_SESSION['roleID']) ? (int)$_SESSION['roleID'] : ((isset($_SESSION['role_id']) ? (int)$_SESSION['role_id'] : 0));

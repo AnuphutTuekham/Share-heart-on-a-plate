@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/sql/config.php';
-session_start();
 
 // ดึง roleID จาก session
 $roleId = isset($_SESSION['roleID']) ? (int)$_SESSION['roleID'] : (isset($_SESSION['role_id']) ? (int)$_SESSION['role_id'] : 0);

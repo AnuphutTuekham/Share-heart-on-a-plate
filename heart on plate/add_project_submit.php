@@ -8,7 +8,6 @@ try {
         exit('Method not allowed');
     }
 
-    session_start();
     $ownerId = isset($_SESSION['roleID']) ? (int)$_SESSION['roleID'] : ((isset($_SESSION['role_id']) ? (int)$_SESSION['role_id'] : 0));
     if ($ownerId <= 0) {
         throw new RuntimeException('กรุณาเลือกบทบาทก่อนสร้างโครงการ');

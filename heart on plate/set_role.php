@@ -1,8 +1,6 @@
 <?php
-session_start();
 header('Content-Type: application/json; charset=utf-8');
 
-// ถ้าต้องการอัปเดตลง DB เมื่อมีการล็อกอินเท่านั้น
 require_once __DIR__ . '/sql/config.php';
 
 try {
